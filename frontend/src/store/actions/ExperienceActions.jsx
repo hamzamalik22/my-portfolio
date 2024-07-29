@@ -10,7 +10,7 @@ import {
     try {
       dispatch(getExperienceStart());
       const response = await api.get("/api/experience/");
-      console.log(response);
+      // console.log(response);
       dispatch(getExperienceSuccess(response.data.Experience));
     } catch (error) {
       dispatch(getExperienceFailure(error.message));

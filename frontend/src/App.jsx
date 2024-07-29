@@ -9,6 +9,7 @@ import { fetchEducation } from "./store/actions/EducationActions";
 import { fetchSkill } from "./store/actions/SkillActions";
 import { fetchExperience } from "./store/actions/ExperienceActions";
 import { fetchProject } from "./store/actions/ProjectActions";
+import { Analytics } from "@vercel/analytics/react";
 
 const App = () => {
   const [initialLoading, setInitialLoading] = useState(true);
@@ -50,15 +51,18 @@ const App = () => {
   }
 
   return (
-    <div>
-      <main>
-        <Sidebar />
-        <div className="main-content">
-          <Navbar />
-          <Router />
-        </div>
-      </main>
-    </div>
+    <>
+      <div>
+        <main>
+          <Sidebar />
+          <div className="main-content">
+            <Navbar />
+            <Router />
+          </div>
+        </main>
+      </div>
+      <Analytics />
+    </>
   );
 };
 

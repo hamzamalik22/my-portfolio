@@ -10,7 +10,7 @@ import {
     try {
       dispatch(getEducationStart());
       const response = await api.get("/api/education/");
-      console.log(response);
+      // console.log(response);
       dispatch(getEducationSuccess(response.data.Education));
     } catch (error) {
       dispatch(getEducationFailure(error.message));

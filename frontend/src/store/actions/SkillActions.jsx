@@ -10,7 +10,7 @@ import {
     try {
       dispatch(getSkillStart());
       const response = await api.get("/api/skill/");
-      console.log(response);
+      // console.log(response);
       dispatch(getSkillSuccess(response.data.Skill));
     } catch (error) {
       dispatch(getSkillFailure(error.message));

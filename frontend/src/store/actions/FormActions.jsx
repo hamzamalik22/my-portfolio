@@ -10,7 +10,7 @@ export const createMessage = (data) => async (dispatch) => {
   try {
     dispatch(createContactFormStart());
     const response = await api.post("/api/message/", data);
-    console.log(response);
+    // console.log(response);
     dispatch(createContactFormSuccess(response.data));
   } catch (error) {
     dispatch(createContactFormFailure(error.message));

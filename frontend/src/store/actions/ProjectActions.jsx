@@ -10,7 +10,7 @@ import {
     try {
       dispatch(getProjectStart());
       const response = await api.get("/api/project/");
-      console.log(response);
+      // console.log(response);
       dispatch(getProjectSuccess(response.data.Project));
     } catch (error) {
       dispatch(getProjectFailure(error.message));
