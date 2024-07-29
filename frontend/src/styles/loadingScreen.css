@@ -1,0 +1,175 @@
+.unique-main {
+    font-family: 'Arvo', sans-serif;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.unique-h1 {
+    text-transform: uppercase;
+    color: #F1FAEE;
+    font-size: 4rem;
+}
+
+.unique-roller {
+    height: 4.125rem;
+    line-height: 4rem;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #2c82fa;
+}
+
+#unique-spare-time {
+    font-size: 1.5rem;
+    font-style: italic;
+    letter-spacing: 1rem;
+    color: hsla(150, 100%, 58%, 0.774);
+}
+
+.unique-roller #unique-rolltext {
+    position: absolute;
+    top: 0;
+    animation: unique-slide 4s infinite;
+}
+
+@keyframes unique-slide {
+    0% {
+        top: 0;
+    }
+
+    25% {
+        top: -4rem;
+    }
+
+    50% {
+        top: -8rem;
+    }
+
+    72.5% {
+        top: -12.25rem;
+    }
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 1200px) {
+    .unique-h1 {
+        font-size: 3rem;
+    }
+
+    .unique-roller {
+        height: 3rem;
+        line-height: 3rem;
+    }
+
+    #unique-spare-time {
+        font-size: 1rem;
+        letter-spacing: 0.8rem;
+    }
+
+    .unique-roller #unique-rolltext {
+        animation: unique-slide 4s infinite;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .unique-h1 {
+        font-size: 2.5rem;
+    }
+
+    .unique-roller {
+        height: 2.5rem;
+        line-height: 2.5rem;
+    }
+
+    #unique-spare-time {
+        font-size: 0.9rem;
+        letter-spacing: 0.6rem;
+    }
+
+    .unique-roller #unique-rolltext {
+        animation: unique-slide 5s infinite;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .unique-h1 {
+        font-size: 2rem;
+    }
+
+    .unique-roller {
+        height: 2rem;
+        line-height: 2rem;
+    }
+
+    #unique-spare-time {
+        font-size: 0.8rem;
+        letter-spacing: 0.4rem;
+    }
+
+    .unique-roller #unique-rolltext {
+        animation: unique-slide-mob 5s infinite;
+    }
+
+    @keyframes unique-slide-mob {
+        0% {
+            top: 0;
+        }
+
+        25% {
+            top: -2rem;
+        }
+
+        50% {
+            top: -4rem;
+        }
+
+        72.5% {
+            top: -6rem;
+        }
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .unique-h1 {
+        font-size: 1.5rem;
+    }
+
+    .unique-roller {
+        height: 1.5rem;
+        line-height: 1.5rem;
+    }
+
+    #unique-spare-time {
+        font-size: 0.7rem;
+        letter-spacing: 0.2rem;
+    }
+
+    .unique-roller #unique-rolltext {
+        animation: unique-slide-tiny 5s infinite;
+    }
+
+    @keyframes unique-slide-tiny {
+        0% {
+            top: 0;
+        }
+
+        25% {
+            top: -1.5rem;
+        }
+
+        50% {
+            top: -3rem;
+        }
+
+        72.5% {
+            top: -4.5rem;
+        }
+    }
+}
