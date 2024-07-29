@@ -1,5 +1,5 @@
 import React from "react";
-import { InfinitySpin, LineWave } from "react-loader-spinner";
+import { InfinitySpin } from "react-loader-spinner";
 
 const Loader = () => {
   return (

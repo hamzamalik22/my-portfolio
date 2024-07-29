@@ -1,4 +1,3 @@
-// src/App.jsx
 import React, { useState, useEffect } from "react";
 import "./styles/style.css";
 import Router from "./routes/Router";
@@ -36,11 +35,11 @@ const App = () => {
       setInitialLoading(false);
     }
 
-    // Set a timeout to clear local storage after 5 minutes (300000 milliseconds)
+    // Set a timeout to clear local storage after 2.5 minutes (150000 milliseconds)
     const clearLocalStorageTimeout = setTimeout(() => {
       localStorage.clear();
       localStorage.setItem("isFirstLoad", "false"); // Keep the isFirstLoad item
-    }, 300000);
+    }, 150000);
 
     // Cleanup the timeout if the component unmounts
     return () => clearTimeout(clearLocalStorageTimeout);

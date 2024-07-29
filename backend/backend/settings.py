@@ -165,14 +165,8 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 
 cloudinary.config(
-    cloud_name = "dut0so6xj",
-    api_key = "954143521361463",
-    api_secret = "s1qz7yTgv5JCibkqnuIe3691hso",
+    cloud_name=str(os.getenv("CLOUDINARY_CLOUD_NAME")),
+    api_key=str(os.getenv("CLOUDINARY_API_KEY")),
+    api_secret=str(os.getenv("CLOUDINARY_API_SECRET")),
 )
 
-
-# cloudinary.config(
-#     cloud_name = str(os.getenv("CLOUDINARY_CLOUD_NAME")),
-#     api_key = str(os.getenv("CLOUDINARY_API_KEY")),
-#     api_secret = str(os.getenv("CLOUDINARY_API_SECRET")),
-# )
