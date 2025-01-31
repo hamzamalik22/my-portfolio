@@ -90,7 +90,7 @@ const Sidebar = () => {
               </a>
             </div>
           </li>
-          <li className="contact-item">
+          {/* <li className="contact-item">
             <div className="icon-box">
               <ion-icon name="phone-portrait-outline"></ion-icon>
             </div>
@@ -100,7 +100,7 @@ const Sidebar = () => {
                 {phone}
               </a>
             </div>
-          </li>
+          </li> */}
           <li className="contact-item">
             <div className="icon-box">
               <ion-icon name="calendar-outline"></ion-icon>
