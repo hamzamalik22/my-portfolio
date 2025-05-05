@@ -103,12 +103,24 @@ WSGI_APPLICATION = "backend.wsgi.application"
 #     }
 # }
 
-
 DATABASES = {
-    "default": dj_database_url.config(
-        default=str(os.getenv("DATABASE_URL")), conn_max_age=1800
-    ),
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': str(os.getenv("DATABASE_USER")),
+        'PASSWORD': str(os.getenv("DATABASE_PASSWORD")),
+        'HOST': str(os.getenv("DATABASE_HOST")),
+        'PORT': '5432',
+    }
 }
+
+
+
+# DATABASES = {
+#     "default": dj_database_url.config(
+#         default=str(os.getenv("DATABASE_URL")), conn_max_age=1800
+#     ),
+# }
 
 
 # Password validation
