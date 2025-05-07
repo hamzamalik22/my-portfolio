@@ -30,60 +30,10 @@ const Portfolio = () => {
           </header>
 
           <section className="projects">
-            {/* <ul className="filter-list">
-              <li className="filter-item">
-                <button className="active" data-filter-btn>
-                  All
-                </button>
-              </li>
-
-              <li className="filter-item">
-                <button data-filter-btn>Web design</button>
-              </li>
-
-              <li className="filter-item">
-                <button data-filter-btn>Applications</button>
-              </li>
-
-              <li className="filter-item">
-                <button data-filter-btn>Web development</button>
-              </li>
-            </ul>
-
-            <div className="filter-select-box">
-              <button className="filter-select" data-select>
-                <div className="select-value" data-selecct-value>
-                  Select category
-                </div>
-
-                <div className="select-icon">
-                  <ion-icon name="chevron-down"></ion-icon>
-                </div>
-              </button>
-
-              <ul className="select-list">
-                <li className="select-item">
-                  <button data-select-item>All</button>
-                </li>
-
-                <li className="select-item">
-                  <button data-select-item>Web design</button>
-                </li>
-
-                <li className="select-item">
-                  <button data-select-item>Applications</button>
-                </li>
-
-                <li className="select-item">
-                  <button data-select-item>Web development</button>
-                </li>
-              </ul>
-            </div> */}
-
             <ul className="project-list">
               {list.map((item, index) => (
-                <li key={index} className="project-item  active">
-                  <a target="_blank" href={item.link}>
+                <li key={index} className="project-item active">
+                  <a target="_blank" href={item.link} className="project-link">
                     <figure className="project-img">
                       <div className="project-item-icon-box">
                         <ion-icon name="eye-outline"></ion-icon>
@@ -93,12 +43,14 @@ const Portfolio = () => {
                         src={item.featured_image}
                         alt={item.title}
                         loading="lazy"
+                        className="project-img-cover"
                       />
                     </figure>
 
-                    <h3 className="project-title">{item.title}</h3>
-
-                    <p className="project-category">{item.category.title}</p>
+                    <div className="project-content">
+                      <h3 className="project-title">{item.title}</h3>
+                      <p className="project-category">{item.category.title}</p>
+                    </div>
                   </a>
                 </li>
               ))}

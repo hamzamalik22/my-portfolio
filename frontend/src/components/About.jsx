@@ -15,14 +15,26 @@ const About = () => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [selectedTestimonial, setSelectedTestimonial] = useState(null);
 
+  // useEffect(() => {
+  //   if (!list || list.length === 0) {
+  //     dispatch(fetchAbout());
+  //   }
+  //   if (!testList || testList.length === 0) {
+  //     dispatch(fetchTestimonial());
+  //   }
+  // }, [dispatch, list, testList]);
+
+
   useEffect(() => {
-    if (list.length === 0) {
+    if (Array.isArray(list) && list.length === 0) {
       dispatch(fetchAbout());
     }
-    if (testList.length === 0) {
+    if (Array.isArray(testList) && testList.length === 0) {
       dispatch(fetchTestimonial());
     }
-  }, [dispatch, list.length, testList.length]);
+  }, [dispatch, list, testList]);
+  
+  // console.log(`This is response : ${[list]}`);
 
   const {
     para1,
@@ -35,7 +47,7 @@ const About = () => {
     service_3_description,
     service_4_title,
     service_4_description,
-  } = list;
+  } = list || {};
 
   const openModal = (testimonial) => {
     setSelectedTestimonial(testimonial);
@@ -54,6 +66,7 @@ const About = () => {
       </>
     );
   if (error || testError) return <p>Error: {error || testError}</p>;
+  if (!list || !testList) return <Loader />;
 
   return (
     <>
@@ -125,7 +138,7 @@ const About = () => {
           <h3 className="h3 testimonials-title">Few Nice Words</h3>
 
           <ul className="testimonials-list has-scrollbar">
-            {testList.map((item, index) => (
+            {Array.isArray(testList) && testList.map((item, index) => (
               <li
                 key={index}
                 className="testimonials-item"

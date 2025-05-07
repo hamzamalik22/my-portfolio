@@ -36,11 +36,11 @@ const App = () => {
       setInitialLoading(false);
     }
 
-    // Set a timeout to clear local storage after 2.5 minutes (150000 milliseconds)
+    // Set a timeout to clear local storage after 24 hours (86400000 milliseconds)
     const clearLocalStorageTimeout = setTimeout(() => {
       localStorage.clear();
-      localStorage.setItem("isFirstLoad", "false"); // Keep the isFirstLoad item
-    }, 150000);
+      localStorage.setItem("isFirstLoad", "false");
+    }, 86400000);
 
     // Cleanup the timeout if the component unmounts
     return () => clearTimeout(clearLocalStorageTimeout);

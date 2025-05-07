@@ -1,9 +1,10 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProfile } from "../store/actions/ProfileActions";
 import { FileDown } from "lucide-react";
 
 const Sidebar = () => {
+  const [isActive, setIsActive] = useState(false);
   const sidebarRef = useRef(null);
   const sidebarBtnRef = useRef(null);
   const dispatch = useDispatch();
@@ -30,16 +31,15 @@ const Sidebar = () => {
     }
   }, [dispatch, list.length]);
 
-  const toggleClass = (elem) => {
-    elem.classList.toggle("active");
+  const handleToggle = () => {
+    setIsActive(!isActive);
+    if (sidebarRef.current) {
+      sidebarRef.current.classList.toggle("active");
+    }
   };
 
   useEffect(() => {
-    const sidebar = sidebarRef.current;
     const sidebarBtn = sidebarBtnRef.current;
-
-    const handleToggle = () => toggleClass(sidebar);
-
     if (sidebarBtn) {
       sidebarBtn.addEventListener("click", handleToggle);
     }
@@ -49,7 +49,7 @@ const Sidebar = () => {
         sidebarBtn.removeEventListener("click", handleToggle);
       }
     };
-  }, []);
+  }, [isActive]);
 
   if (loading) return <p>..</p>;
   if (error) return <p>Error: {error}</p>;
@@ -124,12 +124,10 @@ const Sidebar = () => {
           <li className="contact-item">
             <a target="_blank"
               href="/Hamza_resume.pdf"
-              className="resume_btn gap-1 min-[1250px]:m-auto"
+              className="resume_btn flex items-center justify-center gap-2 w-full py-2 px-4 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
             >
-              <span>
-                <FileDown size="20px" />
-              </span>{" "}
-              Resume
+              <FileDown size="20px" />
+              <span>Resume</span>
             </a>
           </li>
         </ul>
@@ -137,7 +135,7 @@ const Sidebar = () => {
         <div className="separator"></div>
         <div className="separator hidden min-[1250px]:block"></div>
 
-        <ul className="social-list">
+        <ul className="social-list flex justify-center gap-4">
           <li className="social-item">
             <a target="_blank" href={linkedin} className="social-link">
               <ion-icon name="logo-linkedin"></ion-icon>

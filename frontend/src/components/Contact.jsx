@@ -126,67 +126,112 @@ const Contact = () => {
         }
 
         .social-card {
+          position: relative;
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: center;
           padding: 20px;
-          border-radius: 12px;
+          border-radius: 14px;
           text-align: center;
           text-decoration: none;
-          color: #fff;
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          color: var(--white-2);
+          background: var(--border-gradient-onyx);
+          box-shadow: var(--shadow-2);
+          z-index: 1;
+          transition: var(--transition-1);
+        }
+
+        .social-card::before {
+          content: "";
+          position: absolute;
+          inset: 1px;
+          background: var(--bg-gradient-jet);
+          border-radius: inherit;
+          z-index: -1;
+          transition: var(--transition-1);
         }
 
         .social-card:hover {
           transform: translateY(-5px);
-          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+          background: var(--bg-gradient-yellow-1);
+        }
+
+        .social-card:hover::before {
+          background: var(--bg-gradient-yellow-2);
         }
 
         .social-icon {
-          font-size: 2.5rem; /* Use rem for scalable sizing */
+          font-size: 2.5rem;
           margin-bottom: 8px;
-          transition: font-size 0.3s ease; /* Smooth transition for icon size */
+          color: var(--orange-yellow-crayola);
+          transition: var(--transition-1);
+        }
+
+        .social-card:hover .social-icon {
+          color: var(--white-2);
         }
 
         .social-name {
-          font-size: 1rem; /* Use rem for scalable sizing */
-          font-weight: 500;
+          font-size: var(--fs-6);
+          font-weight: var(--fw-500);
+          color: var(--light-gray);
+          transition: var(--transition-1);
+        }
+
+        .social-card:hover .social-name {
+          color: var(--white-2);
         }
 
         @media (max-width: 1024px) {
           .social-icon {
-            font-size: 2rem; /* Slightly smaller icons for tablets */
+            font-size: 2rem;
           }
 
           .social-name {
-            font-size: 0.9rem;
+            font-size: var(--fs-7);
           }
         }
 
         @media (max-width: 768px) {
+          .social-grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 10px;
+            max-width: 200px;
+            margin: 0 auto;
+          }
+
+          .social-card {
+            aspect-ratio: 1;
+            padding: 12px;
+            border-radius: 50%;
+          }
+
           .social-icon {
-            font-size: 1.5rem; /* Smaller icons for mobile */
+            font-size: 1.2rem;
+            margin-bottom: 0;
           }
 
           .social-name {
-            font-size: 0.8rem;
+            display: none;
           }
         }
 
         @media (max-width: 480px) {
-        .social-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-          gap: 16px;
-          padding: 16px;
-        }
-          .social-icon {
-            font-size: 1.2rem; /* Even smaller icons for very small screens */
+          .social-grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            padding: 8px;
+            max-width: 160px;
+          }
+          
+          .social-card {
+            padding: 8px;
           }
 
-          .social-name {
-            font-size: 0.7rem;
+          .social-icon {
+            font-size: 1rem;
           }
         }
       `}</style>

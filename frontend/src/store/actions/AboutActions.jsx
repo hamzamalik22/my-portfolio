@@ -11,7 +11,7 @@ import {
     try {
       dispatch(getAboutStart());
       const response = await api.get("/api/about/");
-      // console.log(response);
+      // console.log(`This is response : ${response}`);
       dispatch(getAboutSuccess(response.data));
     } catch (error) {
       dispatch(getAboutFailure(error.message));
