@@ -89,7 +89,6 @@ const Contact = () => {
               placeholder="Your Message"
               required
               data-form-input
-              dangerouslySetInnerHTML={{ __html: message }}
             ></textarea>
 
             <button className="form-btn" type="submit">
