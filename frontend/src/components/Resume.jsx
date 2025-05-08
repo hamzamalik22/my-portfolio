@@ -75,7 +75,7 @@ const Resume = () => {
         <ol className="timeline-list">
           {expList.map((item, index) => (
             <li key={index} className="timeline-item">
-              <h4 className="h4 timeline-item-title">{item.job_title}</h4>
+              <h4 className="h4 timeline-item-title">{item.job_title} ({item.company_name})</h4>
               <span>
                 {item.start_year} — {item.end_year}
               </span>
