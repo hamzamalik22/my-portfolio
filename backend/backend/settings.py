@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "api.apps.ApiConfig",
+    "ckeditor",
+    "ckeditor_uploader",
 ]
 
 EXTERNAL_APPS = [
@@ -180,4 +182,6 @@ cloudinary.config(
     api_key=str(os.getenv("CLOUDINARY_API_KEY")),
     api_secret=str(os.getenv("CLOUDINARY_API_SECRET")),
 )
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
 

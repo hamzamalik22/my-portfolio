@@ -58,7 +58,7 @@ const Resume = () => {
               <span>
                 {item.start_year} — {item.end_year}
               </span>
-              <p className="timeline-text">{item.description}</p>
+              <p className="timeline-text" dangerouslySetInnerHTML={{ __html: item.description }} />
             </li>
           ))}
         </ol>
@@ -79,7 +79,7 @@ const Resume = () => {
               <span>
                 {item.start_year} — {item.end_year}
               </span>
-              <p className="timeline-text">{item.description}</p>
+              <p className="timeline-text" dangerouslySetInnerHTML={{ __html: item.description }} />
             </li>
           ))}
         </ol>
