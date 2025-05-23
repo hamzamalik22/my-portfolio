@@ -1,5 +1,6 @@
 from django.db import models
 from cloudinary.models import CloudinaryField
+from ckeditor.fields import RichTextField
 
 
 # Create your models here.
@@ -23,16 +24,16 @@ class Profile(models.Model):
 
 
 class About(models.Model):
-    para1 = models.TextField(null=True)
-    para2 = models.TextField(null=True)
+    para1 = RichTextField(null=True)
+    para2 = RichTextField(null=True)
     service_1_title = models.CharField(max_length=200, null=True)
-    service_1_description = models.TextField(null=True)
+    service_1_description = RichTextField(null=True)
     service_2_title = models.CharField(max_length=200, null=True)
-    service_2_description = models.TextField(null=True)
+    service_2_description = RichTextField(null=True)
     service_3_title = models.CharField(max_length=200, null=True)
-    service_3_description = models.TextField(null=True)
+    service_3_description = RichTextField(null=True)
     service_4_title = models.CharField(max_length=200, null=True)
-    service_4_description = models.TextField(null=True)
+    service_4_description = RichTextField(null=True)
 
     def __str__(self):
         return "About Section Data"
@@ -44,7 +45,7 @@ class Testimonial(models.Model):
         ("Female", "Female"),
     )
     name = models.CharField(max_length=200, null=True)
-    message = models.TextField(null=True)
+    message = RichTextField(null=True)
     gender = models.CharField(max_length=200, null=True, choices=GENDER)
     date = models.CharField(max_length=200, null=True)
     
@@ -58,7 +59,7 @@ class Education(models.Model):
     school_name = models.CharField(max_length=200, null=True)
     start_year = models.IntegerField(null=True)
     end_year = models.IntegerField(null=True)
-    description = models.TextField(null=True)
+    description = RichTextField(null=True)
     date_created = models.DateTimeField(auto_now_add=True, null=True)
 
     def __str__(self):
@@ -74,7 +75,7 @@ class Experience(models.Model):
     job_title = models.CharField(max_length=200, null=True)
     start_year = models.IntegerField(null=True)
     end_year = models.CharField(max_length=200, null=True, default="Present")
-    description = models.TextField(null=True)
+    description = RichTextField(null=True)
     date_created = models.DateTimeField(auto_now_add=True, null=True)
 
     def __str__(self):
@@ -119,7 +120,7 @@ class Project(models.Model):
 class Message(models.Model):
     name = models.CharField(max_length=200, null=True)
     email = models.CharField(max_length=200, null=True)
-    message = models.TextField(null=True)
+    message = RichTextField(null=True)
     date_created = models.DateTimeField(auto_now_add=True, null=True)
 
     def __str__(self):

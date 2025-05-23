@@ -76,8 +76,8 @@ const About = () => {
         </header>
 
         <section className="about-text">
-          <p>{para1}</p>
-          <p>{para2}</p>
+          <p dangerouslySetInnerHTML={{ __html: para1 }} />
+          <p dangerouslySetInnerHTML={{ __html: para2 }} />
         </section>
 
         <section className="service">
@@ -91,7 +91,7 @@ const About = () => {
 
               <div className="service-content-box">
                 <h4 className="h4 service-item-title">{service_1_title}</h4>
-                <p className="service-item-text">{service_1_description}</p>
+                <p className="service-item-text" dangerouslySetInnerHTML={{ __html: service_1_description }} />
               </div>
             </li>
 
@@ -106,7 +106,7 @@ const About = () => {
 
               <div className="service-content-box">
                 <h4 className="h4 service-item-title">{service_2_title}</h4>
-                <p className="service-item-text">{service_2_description}</p>
+                <p className="service-item-text" dangerouslySetInnerHTML={{ __html: service_2_description }} />
               </div>
             </li>
 
@@ -117,7 +117,7 @@ const About = () => {
 
               <div className="service-content-box">
                 <h4 className="h4 service-item-title">{service_3_title}</h4>
-                <p className="service-item-text">{service_3_description}</p>
+                <p className="service-item-text" dangerouslySetInnerHTML={{ __html: service_3_description }} />
               </div>
             </li>
 
@@ -128,7 +128,7 @@ const About = () => {
 
               <div className="service-content-box">
                 <h4 className="h4 service-item-title">{service_4_title}</h4>
-                <p className="service-item-text">{service_4_description}</p>
+                <p className="service-item-text" dangerouslySetInnerHTML={{ __html: service_4_description }} />
               </div>
             </li>
           </ul>
@@ -163,7 +163,7 @@ const About = () => {
                   </h4>
 
                   <div className="testimonials-text" data-testimonials-text>
-                    <p>{item.message}</p>
+                    <p dangerouslySetInnerHTML={{ __html: item.message }} />
                   </div>
                 </div>
               </li>
@@ -205,7 +205,7 @@ const About = () => {
                 <time dateTime={selectedTestimonial.date}>{selectedTestimonial.date}</time>
 
                 <div data-modal-text>
-                  <p>{selectedTestimonial.message}</p>
+                  <p dangerouslySetInnerHTML={{ __html: selectedTestimonial.message }} />
                 </div>
               </div>
             </section>
