@@ -102,13 +102,13 @@ VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
 VITE_ENABLE_REALTIME=true
 VITE_DJANGO_BACKEND_URL=http://localhost:8000
 ```
-<!-- 
+
 ## 📊 **Performance**
 
 - **Lighthouse Score**: 95+ (Performance, Accessibility, Best Practices, SEO)
 - **Load Time**: < 2 seconds
 - **Mobile Responsive**: Perfect on all devices
-- **SEO Optimized**: Meta tags, structured data, sitemap -->
+- **SEO Optimized**: Meta tags, structured data, sitemap
 
 ## 🤝 **Connect With Me**
 
@@ -131,6 +131,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 **Built with ❤️ by Hamza Malik**
-**Free Palestine 🇵🇸**
 
 *Full Stack Developer | AI Enthusiast | Problem Solver*
